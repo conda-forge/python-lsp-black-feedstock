@@ -1,5 +1,5 @@
 {% set name = "python-lsp-black" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0d7dd5f440a53b6f676fa8c097979e0ff611065b8f4ffd248b43228b0df2efee
+  sha256: c751fb30609260c89641ba749c4fe0e21fff9fd65fb34c00d380f953c9293b83
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -34,7 +34,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Black plugin for the Python LSP Server'
+  summary: Black plugin for the Python LSP Server
   dev_url: https://github.com/python-lsp/python-lsp-black
 
 extra:
