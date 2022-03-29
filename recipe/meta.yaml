@@ -1,5 +1,5 @@
 {% set name = "python-lsp-black" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4f665aca0fd1611f9e2a4c1ea09de8809810bbe5013eeee5dfb8796c90a12d4c
+  sha256: 135ed1af3a14463cf5b6bb5fff4f95c6da5a030e9192ab042ca63febcb0af9d4
 
 build:
   number: 0
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
   run:
-    - python >=3.6
-    - black
-    - python-lsp-server
+    - python >=3.7
+    - black >=22.1.0
+    - python-lsp-server >=1.4.0
     - toml
 
 test:
