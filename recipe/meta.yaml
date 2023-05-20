@@ -22,7 +22,7 @@ requirements:
     - python >=3.7
     - black >=22.3.0
     - python-lsp-server >=1.4.0
-    - toml
+    - tomli
 
 test:
   imports:
@@ -42,3 +42,4 @@ extra:
     - andfoy
     - ccordoba12
     - steff456
+    - dalthviz
