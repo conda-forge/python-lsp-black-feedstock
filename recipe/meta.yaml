@@ -6,25 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8286d2d310c566844b3c116b824ada6fccfa6ba228b1a09a0526b74c04e0805f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - black >=23.11.0
     - python-lsp-server >=1.4.0
     - tomli
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pylsp_black
     - pylsp_black.plugin
